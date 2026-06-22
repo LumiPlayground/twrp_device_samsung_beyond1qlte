@@ -1,0 +1,29 @@
+# mount point	fstype		device			device2			flags
+
+/system		ext4		/dev/block/bootdevice/by-name/system		flags=backup=1;display="System"
+/product	ext4		/dev/block/bootdevice/by-name/product		flags=backup=1;display="Product"
+/vendor		ext4		/dev/block/bootdevice/by-name/vendor		flags=backup=1;display="Vendor"
+
+/system_image	emmc		/dev/block/bootdevice/by-name/system		flags=backup=1;flashimg=1;display="System Image"
+/product_image	emmc		/dev/block/bootdevice/by-name/product		flags=backup=1;flashimg=1;display="Product Image"
+/vendor_image	emmc		/dev/block/bootdevice/by-name/vendor		flags=backup=1;flashimg=1;display="Vendor Image"
+
+/boot		emmc		/dev/block/bootdevice/by-name/boot		flags=backup=1;flashimg=1;display="Boot"
+/dtbo		emmc		/dev/block/bootdevice/by-name/dtbo		flags=backup=1;flashimg=1;display="Dtbo"
+/recovery	emmc		/dev/block/bootdevice/by-name/recovery		flags=backup=1;flashimg=1;display="Recovery"
+
+/modem         vfat   /dev/block/bootdevice/by-name/modem
+/firmware      vfat   /dev/block/bootdevice/by-name/apnhlos                   flags=display="Firmware";fsflags=ro
+
+/cache         ext4		/dev/block/bootdevice/by-name/cache
+/mnt/vendor/efs		ext4		/dev/block/bootdevice/by-name/efs		flags=backup=1;display="EFS"
+/sec_efs      ext4		/dev/block/bootdevice/by-name/sec_efs		flags=backup=1;display="Sec EFS"
+
+/keydata         ext4   /dev/block/bootdevice/by-name/keydata                   flags=display="keydata";wipeingui
+/keyrefuge      ext4   /dev/block/bootdevice/by-name/keyrefuge                   flags=display="keyrefuge";wipeingui
+
+/mnt/vendor/persist	ext4		/dev/block/bootdevice/by-name/persist		flags=fsflags=ro;display="Persist"
+
+# Removable storage
+/external_sd	auto		/dev/block/mmcblk0p1	/dev/block/mmcblk0	flags=display="Micro SDcard";storage;wipeingui;removable
+/usb-otg	auto		/dev/block/sde1		/dev/block/sde1		flags=display="USB-OTG";storage;wipeingui;removable
